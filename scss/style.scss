@@ -1,0 +1,12 @@
+@use 'colors' as *;
+
+div {
+  color: $primary-color;
+  height: 200px;
+  background-color: $primary-color;
+  margin: 20px;
+  a {
+    color: $secondary-color;
+    text-decoration: none;
+  }
+}

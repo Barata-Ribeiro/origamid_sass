@@ -1,12 +1,37 @@
-@use 'colors' as *;
+$cor-primaria: #84f;
+$cor-neutra: #fff;
+$font-primeira: monospace, sans-serif;
+$gutter: 20px;
 
-div {
-  color: $primary-color;
-  height: 200px;
-  background-color: $primary-color;
-  margin: 20px;
-  a {
-    color: $secondary-color;
-    text-decoration: none;
-  }
+// Ordem importa
+// $cor-primaria: pink;
+
+section {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+h1 {
+  color: $cor-primaria;
+  font-family: $font-primeira;
+  margin-bottom: $gutter;
+}
+
+p {
+  font-size: 1.2em;
+  line-height: 1.4;
+  max-width: 400px;
+}
+
+a {
+  display: block;
+  max-width: 120px;
+  padding: 10px;
+  border-radius: 4px;
+  text-align: center;
+  background: $cor-primaria;
+  color: $cor-neutra;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: $font-primeira;
 }

@@ -1,37 +1,60 @@
 $cor-primaria: #84f;
 $cor-neutra: #fff;
-$font-primeira: monospace, sans-serif;
+$font-primaria: monospace, sans-serif;
+$font-secundaria: serif;
 $gutter: 20px;
-
-// Ordem importa
-// $cor-primaria: pink;
 
 section {
   max-width: 600px;
   margin: 0 auto;
 }
 
-h1 {
-  color: $cor-primaria;
-  font-family: $font-primeira;
-  margin-bottom: $gutter;
+.modal {
+  h1 {
+    color: $cor-primaria;
+    font-family: $font-primaria;
+    margin-bottom: $gutter;
+  }
+
+  p {
+    font: {
+      family: $font-secundaria;
+      size: 1.2rem;
+      style: italic;
+    }
+    line-height: 1.4;
+    max-width: 400px;
+  }
+
+  a {
+    display: block;
+    max-width: 120px;
+    padding: 10px;
+    border-radius: 4px;
+    text-align: center;
+    background: $cor-primaria;
+    color: $cor-neutra;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: $font-primaria;
+  }
 }
 
-p {
-  font-size: 1.2em;
-  line-height: 1.4;
-  max-width: 400px;
-}
-
-a {
-  display: block;
-  max-width: 120px;
-  padding: 10px;
-  border-radius: 4px;
+ul {
   text-align: center;
-  background: $cor-primaria;
-  color: $cor-neutra;
-  text-decoration: none;
-  text-transform: uppercase;
-  font-family: $font-primeira;
+  li {
+    display: inline-block;
+    list-style: none;
+  }
+  a {
+    display: block;
+    padding: 0.5rem 1rem;
+    background-color: $cor-primaria;
+    color: $cor-neutra;
+    text-decoration: none;
+    border-radius: 5px;
+    &:hover {
+      background-color: darken($cor-primaria, 10%);
+    }
+  }
 }

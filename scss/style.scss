@@ -1,76 +1,21 @@
-// $tema: oceano;
-// $primary-color: black;
-// $secondary-color: gray;
+$cor-primaria: #84e;
+$font-primaria: monospace;
+$gutter: 60px;
 
-// @if $tema == oceano {
-//   $primary-color: blue;
-//   $secondary-color: orange;
-// } @else if $tema == deserto {
-//   $primary-color: yellow;
-//   $secondary-color: brown;
-// }
-
-@mixin type-1($size) {
-  font-family: monospace;
-  @if $size == normal {
-    font-weight: normal;
-    font-size: 1em;
-  } @else if $size == large {
-    font-weight: normal;
-    font-size: 1.25em;
-  } @else if $size == x-x-large {
-    font-size: 1.5em;
-    font-weight: bold;
-  } @else {
-    font-size: 1em;
-  }
+@function em($pixels, $context: 16px) {
+  @return ($pixels * 1px / $context) * 1em;
 }
 
-@mixin device($device) {
-  @if $device == mobile {
-    @media (max-width: 768px) {
-      @content;
-    }
-  } @else if $device == tablet {
-    @media (min-width: 768px) and (max-width: 1024px) {
-      @content;
-    }
-  } @else if $device == desktop {
-    @media (min-width: 1024px) {
-      @content;
-    }
-  }
+@function grid($colunas, $total: 12) {
+  @return percentage($colunas / $total);
 }
 
 div {
-  $width: 200px;
-
-  width: $width;
-  height: $width * 1.5;
-
-  @if $width > 200px {
-    height: $width * 1.5;
-  } @else if $width < 200px {
-    height: $width * 2;
-  }
-
-  @include device(mobile) {
-    background: red;
-  }
-  @include device(tablet) {
-    background: green;
-  }
-  @include device(desktop) {
-    background: blue;
-  }
-}
-
-p {
-  @include type-1(large);
+  width: grid(6);
 }
 
 @mixin title-large {
-  font-size: 4em;
+  font-size: em(62);
   font-weight: bold;
   font-family: monospace;
   line-height: 1;
@@ -104,10 +49,6 @@ p {
   }
 }
 
-$cor-primaria: #84e;
-$font-primaria: monospace;
-$gutter: 60px;
-
 section {
   max-width: 600px;
   margin: 0 auto;
@@ -129,7 +70,7 @@ section {
     @include separador($cor-primaria, 400px - 2 * $gutter);
     @include mobile {
       color: #84e;
-      font-size: 2em;
+      font-size: em(40);
     }
   }
   p {
@@ -141,7 +82,7 @@ section {
     line-height: 1.4;
     max-width: 400px;
     @include mobile {
-      font-size: 0.6em;
+      font-size: em(36);
     }
   }
   a {
@@ -155,6 +96,10 @@ section {
     text-decoration: none;
     text-transform: uppercase;
     font-family: $font-primaria;
+
+    &:hover {
+      background: transparentize($cor-primaria, 0.5);
+    }
   }
 }
 
@@ -171,7 +116,7 @@ ul {
       color: white;
       &:hover,
       &.active {
-        background: pink;
+        background: darken(blue, 20%);
       }
     }
   }

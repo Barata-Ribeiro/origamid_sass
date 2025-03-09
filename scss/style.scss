@@ -1,28 +1,73 @@
-// Extend mas não é recomendado
-.error {
-  color: red;
-  font-weight: bold;
-}
+// $tema: oceano;
+// $primary-color: black;
+// $secondary-color: gray;
 
-a.error {
-  display: block;
-}
-
-.btn-error {
-  @extend .error;
-  padding: 2px 5px;
-}
-
-// Placeholder
-%clearfix::after {
-  content: '';
-  display: block;
-  clear: both;
-}
-
-// div {
-//   @extend %clearfix;
+// @if $tema == oceano {
+//   $primary-color: blue;
+//   $secondary-color: orange;
+// } @else if $tema == deserto {
+//   $primary-color: yellow;
+//   $secondary-color: brown;
 // }
+
+@mixin type-1($size) {
+  font-family: monospace;
+  @if $size == normal {
+    font-weight: normal;
+    font-size: 1em;
+  } @else if $size == large {
+    font-weight: normal;
+    font-size: 1.25em;
+  } @else if $size == x-x-large {
+    font-size: 1.5em;
+    font-weight: bold;
+  } @else {
+    font-size: 1em;
+  }
+}
+
+@mixin device($device) {
+  @if $device == mobile {
+    @media (max-width: 768px) {
+      @content;
+    }
+  } @else if $device == tablet {
+    @media (min-width: 768px) and (max-width: 1024px) {
+      @content;
+    }
+  } @else if $device == desktop {
+    @media (min-width: 1024px) {
+      @content;
+    }
+  }
+}
+
+div {
+  $width: 200px;
+
+  width: $width;
+  height: $width * 1.5;
+
+  @if $width > 200px {
+    height: $width * 1.5;
+  } @else if $width < 200px {
+    height: $width * 2;
+  }
+
+  @include device(mobile) {
+    background: red;
+  }
+  @include device(tablet) {
+    background: green;
+  }
+  @include device(desktop) {
+    background: blue;
+  }
+}
+
+p {
+  @include type-1(large);
+}
 
 @mixin title-large {
   font-size: 4em;
@@ -37,38 +82,37 @@ a.error {
   -webkit-box-sizing: border-box;
 }
 
-@mixin separador($color: #84f, $largura: 100px) {
+@mixin separador($color: pink, $largura: 100px) {
   &::after {
     content: '';
     display: block;
     width: $largura;
     height: 4px;
-    background-color: $color;
+    background: $color;
   }
 }
 
 @mixin box-shadow($shadow...) {
-  -webkit-box-shadow: $shadow;
-  -moz-box-shadow: $shadow;
   box-shadow: $shadow;
+  -moz-box-shadow: $shadow;
+  -webkit-box-shadow: $shadow;
 }
 
 @mixin mobile {
-  @media screen and (max-width: 768px) {
+  @media (max-width: 600px) {
     @content;
   }
 }
 
-$cor-primaria: #84f;
-$cor-neutra: #fff;
-$font-primaria: monospace, sans-serif;
-$font-secundaria: serif;
-$gutter: 20px;
+$cor-primaria: #84e;
+$font-primaria: monospace;
+$gutter: 60px;
 
 section {
-  max-width: 600px - 2 * $gutter;
+  max-width: 600px;
   margin: 0 auto;
   @include border-box;
+  border-radius: 5px;
 }
 
 .modal {
@@ -77,34 +121,29 @@ section {
     10px 10px 0 0 rgba(0, 0, 0, 0.5),
     15px 15px 0 0 rgba(0, 0, 0, 0.5)
   );
-  border-radius: 5px;
   h1 {
     color: $cor-primaria;
+    font-family: $font-primaria;
     margin-bottom: $gutter;
     @include title-large;
-    @include separador($cor-primaria, 200px - $gutter);
-    // @include separador; // Usando o valor padrão
-
+    @include separador($cor-primaria, 400px - 2 * $gutter);
     @include mobile {
+      color: #84e;
       font-size: 2em;
-      color: pink;
     }
   }
-
   p {
     font: {
-      family: $font-secundaria;
-      size: 1.2rem;
+      size: 1.2em;
+      family: $font-primaria;
       style: italic;
     }
     line-height: 1.4;
     max-width: 400px;
-
     @include mobile {
-      font-size: 1rem;
+      font-size: 0.6em;
     }
   }
-
   a {
     display: block;
     max-width: 120px;
@@ -112,7 +151,7 @@ section {
     border-radius: 4px;
     text-align: center;
     background: $cor-primaria;
-    color: $cor-neutra;
+    color: white;
     text-decoration: none;
     text-transform: uppercase;
     font-family: $font-primaria;
@@ -124,16 +163,16 @@ ul {
   li {
     display: inline-block;
     list-style: none;
-  }
-  a {
-    display: block;
-    padding: 0.5rem 1rem;
-    background-color: $cor-primaria;
-    color: $cor-neutra;
-    text-decoration: none;
-    border-radius: 5px;
-    &:hover {
-      background-color: darken($cor-primaria, 10%);
+    a {
+      display: block;
+      padding: 20px;
+      text-decoration: none;
+      background: blue;
+      color: white;
+      &:hover,
+      &.active {
+        background: pink;
+      }
     }
   }
 }

@@ -66,23 +66,23 @@ $font-secundaria: serif;
 $gutter: 20px;
 
 section {
-  max-width: 600px;
+  max-width: 600px - 2 * $gutter;
   margin: 0 auto;
   @include border-box;
 }
 
 .modal {
   @include box-shadow(
+    5px 5px 0 0 rgba(0, 0, 0, 0.5),
     10px 10px 0 0 rgba(0, 0, 0, 0.5),
-    15px 15px 0 0 rgba(0, 0, 0, 0.5),
-    20px 20px 0 0 rgba(0, 0, 0, 0.5)
+    15px 15px 0 0 rgba(0, 0, 0, 0.5)
   );
   border-radius: 5px;
   h1 {
     color: $cor-primaria;
     margin-bottom: $gutter;
     @include title-large;
-    @include separador($cor-primaria, 200px);
+    @include separador($cor-primaria, 200px - $gutter);
     // @include separador; // Usando o valor padrão
 
     @include mobile {

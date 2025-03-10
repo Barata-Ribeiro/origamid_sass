@@ -1,0 +1,255 @@
+.porcento-1 {
+  width: 6.25%;
+}
+
+.porcento-2 {
+  width: 12.5%;
+}
+
+.porcento-3 {
+  width: 18.75%;
+}
+
+.porcento-4 {
+  width: 25%;
+}
+
+.porcento-5 {
+  width: 31.25%;
+}
+
+.porcento-6 {
+  width: 37.5%;
+}
+
+.porcento-7 {
+  width: 43.75%;
+}
+
+.porcento-8 {
+  width: 50%;
+}
+
+.porcento-9 {
+  width: 56.25%;
+}
+
+.porcento-10 {
+  width: 62.5%;
+}
+
+.porcento-11 {
+  width: 68.75%;
+}
+
+.porcento-12 {
+  width: 75%;
+}
+
+.porcento-13 {
+  width: 81.25%;
+}
+
+.porcento-14 {
+  width: 87.5%;
+}
+
+.porcento-15 {
+  width: 93.75%;
+}
+
+.porcento-16 {
+  width: 100%;
+}
+
+.grid-1 {
+  width: 28px;
+}
+
+.grid-2 {
+  width: 76px;
+}
+
+.grid-3 {
+  width: 124px;
+}
+
+.grid-4 {
+  width: 172px;
+}
+
+.grid-5 {
+  width: 220px;
+}
+
+.grid-6 {
+  width: 268px;
+}
+
+.grid-7 {
+  width: 316px;
+}
+
+.grid-8 {
+  width: 364px;
+}
+
+.grid-9 {
+  width: 412px;
+}
+
+.grid-10 {
+  width: 460px;
+}
+
+.grid-11 {
+  width: 508px;
+}
+
+.grid-12 {
+  width: 556px;
+}
+
+.grid-13 {
+  width: 604px;
+}
+
+.grid-14 {
+  width: 652px;
+}
+
+.grid-15 {
+  width: 700px;
+}
+
+.grid-16 {
+  width: 748px;
+}
+
+.type-1 {
+  font-size: 16px;
+}
+
+.type-2 {
+  font-size: 32px;
+}
+
+.type-3 {
+  font-size: 48px;
+}
+
+.type-4 {
+  font-size: 64px;
+}
+
+.type-5 {
+  font-size: 80px;
+}
+
+.type-6 {
+  font-size: 96px;
+}
+
+.social-facebook {
+  background-image: url("img/facebook.png");
+}
+
+.social-twitter {
+  background-image: url("img/twitter.png");
+}
+
+.social-pinterest {
+  background-image: url("img/pinterest.png");
+}
+
+.social-instagram {
+  background-image: url("img/instagram.png");
+}
+
+div {
+  width: 50%;
+}
+
+section {
+  max-width: 600px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  border-radius: 5px;
+}
+
+.modal {
+  box-shadow: 5px 5px 0 0 rgba(0, 0, 0, 0.5), 10px 10px 0 0 rgba(0, 0, 0, 0.5), 15px 15px 0 0 rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 5px 5px 0 0 rgba(0, 0, 0, 0.5), 10px 10px 0 0 rgba(0, 0, 0, 0.5), 15px 15px 0 0 rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 5px 5px 0 0 rgba(0, 0, 0, 0.5), 10px 10px 0 0 rgba(0, 0, 0, 0.5), 15px 15px 0 0 rgba(0, 0, 0, 0.5);
+}
+.modal h1 {
+  color: #84e;
+  font-family: monospace;
+  margin-bottom: 60px;
+  font-size: 3.875em;
+  font-weight: bold;
+  font-family: monospace;
+  line-height: 1;
+}
+.modal h1::after {
+  content: "";
+  display: block;
+  width: 280px;
+  height: 4px;
+  background: #84e;
+}
+@media (max-width: 600px) {
+  .modal h1 {
+    color: #84e;
+    font-size: 2.5em;
+  }
+}
+.modal p {
+  font-size: 1.2em;
+  font-family: monospace;
+  font-style: italic;
+  line-height: 1.4;
+  max-width: 400px;
+}
+@media (max-width: 600px) {
+  .modal p {
+    font-size: 2.25em;
+  }
+}
+.modal a {
+  display: block;
+  max-width: 120px;
+  padding: 10px;
+  border-radius: 4px;
+  text-align: center;
+  background: #84e;
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: monospace;
+}
+.modal a:hover {
+  background: rgba(136, 68, 238, 0.5);
+}
+
+ul {
+  text-align: center;
+}
+ul li {
+  display: inline-block;
+  list-style: none;
+}
+ul li a {
+  display: block;
+  padding: 20px;
+  text-decoration: none;
+  background: blue;
+  color: white;
+}
+ul li a:hover, ul li a.active {
+  background: #000099;
+}
+
+/*# sourceMappingURL=style.css.map */

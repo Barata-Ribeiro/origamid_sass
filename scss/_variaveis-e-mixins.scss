@@ -1,3 +1,50 @@
+// Cores
 $cor-primaria: #fec63e;
 $cor-preta: #000;
 $cor-branca: #fff;
+
+// Tipografia
+@function em($pixels, $context: 16px) {
+  @return ($pixels * 1px / $context) * 1em;
+}
+
+@mixin tipo-1($tamanho) {
+  @if $tamanho == 14 {
+    font-size: em(14);
+    line-height: 20px;
+  } @else if $tamanho == 18 {
+    font-size: em(18);
+    line-height: 25px;
+  } @else if $tamanho == 24 {
+    font-size: em(24);
+    line-height: 30px;
+  } @else if $tamanho == 36 {
+    font-size: em(36);
+  } @else if $tamanho == 48 {
+    font-size: em(48);
+  } @else {
+    font-size: em(16);
+    line-height: 22px;
+  }
+}
+
+@mixin tipo-2($tamanho) {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  @if $tamanho == 14 {
+    font-size: em(14);
+    line-height: 20px;
+  } @else if $tamanho == 18 {
+    font-size: em(18);
+    line-height: 25px;
+  } @else if $tamanho == 24 {
+    font-size: em(24);
+    line-height: 30px;
+  } @else if $tamanho == 36 {
+    font-size: em(36);
+  } @else if $tamanho == 48 {
+    font-size: em(48);
+  } @else {
+    font-size: em(16);
+    line-height: 22px;
+  }
+}

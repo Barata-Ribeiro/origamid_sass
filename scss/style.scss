@@ -1,14 +1,16 @@
+@import 'variaveis-e-mixins';
+
 // GLOBAL
-@use 'normalize' as *;
-@use 'reset' as *;
-@use 'grid' as *;
-@use 'geral' as *;
+@import 'normalize';
+@import 'reset';
+@import 'grid';
+@import 'geral';
 
 // PAGINAS
-@use 'sobre' as *;
-@use 'produtos' as *;
-@use 'portfolio' as *;
-@use 'contato' as *;
+@import 'sobre';
+@import 'produtos';
+@import 'portfolio';
+@import 'contato';
 
 // RESPONSIVO
-@use 'responsivo' as *;
+@import 'responsivo';

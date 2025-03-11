@@ -11,6 +11,11 @@
 
 .contato_form {
   padding-right: 60px;
+
+  @include device(mobile) {
+    padding-right: 0px;
+    margin-bottom: 40px;
+  }
 }
 
 .contato_form label {
@@ -81,10 +86,10 @@
   border: 3px solid $cor-primaria;
   display: block;
   padding: 10px;
-}
 
-.contato_dados ul li a:hover {
-  border-color: $cor-preta;
+  &:hover {
+    border-color: $cor-preta;
+  }
 }
 
 .contato_mapa {

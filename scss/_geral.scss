@@ -100,16 +100,33 @@ img {
   background: $cor-primaria; /* Amarelo */
   padding: 15px 0;
   z-index: 10;
+
+  @include device(mobile) {
+    position: relative;
+    padding-bottom: 0px;
+  }
+}
+
+.header img {
+  @include device(mobile) {
+    margin: 0 auto 10px auto;
+  }
 }
 
 .header_menu {
   text-align: right;
+  @include device(mobile) {
+    text-align: center;
+  }
 }
 
 .header_menu ul li {
   display: inline-block;
   margin-left: 25px;
   margin-top: 20px;
+  @include device(mobile) {
+    margin: 5px;
+  }
 }
 
 .header_menu ul li a {
@@ -120,14 +137,27 @@ img {
   @include tipo-1(14);
   padding: 10px 0;
   transition: all 0.3s ease;
+
+  @include device(mobile) {
+    border: 4px solid $cor-preta;
+    width: 136px;
+    display: block;
+    float: left;
+  }
 }
 
 .header_menu ul li a:hover {
   color: $cor-branca;
+  @include device(mobile) {
+    border-color: $cor-branca;
+  }
 }
 
 .header_menu ul li a.menu_ativo {
   color: $cor-branca;
+  @include device(mobile) {
+    border-color: $cor-branca;
+  }
 }
 
 /* Introdução */
@@ -140,6 +170,13 @@ img {
   margin-top: 92px;
   text-align: center;
   padding-top: 80px;
+
+  @include device(mobile) {
+    margin-top: 0px;
+    padding-top: 40px;
+    background: url('../img/bg-mobile.jpg') no-repeat center;
+    background-size: cover;
+  }
 }
 
 .introducao h1 {
@@ -147,6 +184,10 @@ img {
   color: $cor-branca;
   font-weight: bold;
   text-transform: uppercase;
+
+  @include device(mobile) {
+    @include tipo-1(36);
+  }
 }
 
 .quote-externo {
@@ -186,6 +227,10 @@ img {
   text-align: center;
   color: $cor-branca;
   padding-top: 30px;
+
+  @include device(mobile) {
+    margin-top: 0px;
+  }
 }
 
 .introducao-interna h1 {
@@ -248,6 +293,10 @@ img {
   padding-top: 40px;
   text-align: center;
   clear: both;
+
+  @include device(mobile) {
+    padding-top: 10px;
+  }
 }
 
 .call p {
@@ -282,18 +331,25 @@ img {
 
 .qualidade {
   padding: 60px 0;
-}
 
-.qualidade:after {
-  content: '';
-  width: 634px;
-  height: 83px;
-  display: block;
-  background: url('../img/linhas.png') no-repeat center;
-  position: absolute;
-  top: 209px;
-  right: 162px;
-  z-index: -1;
+  &::after {
+    content: '';
+    width: 634px;
+    height: 83px;
+    display: block;
+    background: url('../img/linhas.png') no-repeat center;
+    position: absolute;
+    top: 209px;
+    right: 162px;
+    z-index: -1;
+
+    @include device(table) {
+      right: 66px;
+    }
+    @include device(mobile) {
+      display: none;
+    }
+  }
 }
 
 .qualidade img {
@@ -308,6 +364,9 @@ img {
 .qualidade_lista li {
   text-align: center;
   padding: 0 40px;
+  @include device(tablet) {
+    padding: 0 10px;
+  }
 }
 
 .qualidade_lista li h3 {
@@ -316,15 +375,15 @@ img {
   text-transform: uppercase;
   letter-spacing: 0.1em;
   margin-top: 20px;
-}
 
-.qualidade_lista li h3:after {
-  content: '';
-  display: block;
-  width: 60px;
-  height: 3px;
-  background: $cor-preta;
-  margin: 6px auto;
+  &::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: $cor-preta;
+    margin: 6px auto;
+  }
 }
 
 /*Quebra*/
@@ -386,6 +445,19 @@ img {
   display: block;
   padding: 10px;
   transition: all 0.5s ease;
+
+  @include device(tablet) {
+    border: 3px solid $cor-primaria;
+    display: block;
+    padding: 6px;
+  }
+}
+
+.footer_redes ul li a img {
+  @include device(tablet) {
+    width: 26px;
+    height: 26px;
+  }
 }
 
 .footer_redes ul li a:hover {

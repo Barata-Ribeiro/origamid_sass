@@ -1,2 +1,15 @@
 @use 'reset';
-@use 'grid';
+@use 'grid' as *;
+
+p {
+  color: red;
+  @include device(large) {
+    color: blue;
+  }
+  @include device(medium) {
+    color: green;
+  }
+  @include device(small) {
+    color: yellow;
+  }
+}

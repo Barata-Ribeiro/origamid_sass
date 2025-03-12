@@ -1,19 +1,26 @@
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  background: royalblue;
-  &::after,
-  &::before {
-    content: '';
-    display: table;
-    clear: both;
-  }
-}
+// Variáveis do Grid
 
-.grid-3 {
-  width: calc(25% - 20px);
-  color: white;
-  background: rgba(0, 0, 0, 0.5);
-  float: left;
-  margin-inline: 10px;
+$cols: 12;
+$gutter: 20px;
+$breakpoints: (
+  large: 1200px,
+  medium: 760px,
+  small: 480px,
+);
+
+// Mixin media-query
+@mixin device($size) {
+  @if $size == large {
+    @media screen and (min-width: map-get($breakpoints, large)) {
+      @content;
+    }
+  } @else if $size == medium {
+    @media screen and (min-width: map-get($breakpoints, medium)) and (max-width: #{map-get($breakpoints, large) - 1}) {
+      @content;
+    }
+  } @else if $size == small {
+    @media screen and (max-width: #{map-get($breakpoints, small) - 1}) {
+      @content;
+    }
+  }
 }

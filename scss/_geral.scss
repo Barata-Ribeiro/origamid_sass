@@ -1,7 +1,43 @@
 @use 'variaveis-e-mixins' as *;
+@use 'grid' as *;
 
 body {
   background-color: $bege-claro;
   border: 10px solid $bege-medio;
   color: $cinza;
+  @include device(small) {
+    border: none;
+  }
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+p {
+  @include tipo-1(18);
+}
+
+.titulo {
+  @include tipo-1(18);
+  text-transform: uppercase;
+  &::after {
+    content: '';
+    display: block;
+    background-color: $cinza;
+    width: 75%;
+    float: right;
+    height: 2px;
+    margin-top: 12px;
+    @include device(medium) {
+      width: 60%;
+    }
+  }
+
+  @include device(small) {
+    margin-top: 40px;
+    margin-bottom: 20px;
+  }
 }

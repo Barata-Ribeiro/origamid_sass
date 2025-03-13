@@ -49,14 +49,12 @@ $breakpoints: (
 @mixin grid-structure {
   float: left;
   min-height: 1px;
-  margin-left: $gutter / 2;
-  margin-right: $gutter / 2;
+  margin-inline: $gutter / 2;
 
   @include device(small) {
     width: 100%;
     float: none;
-    margin-left: 0;
-    margin-right: 0;
+    margin-inline: 0;
   }
 }
 
@@ -106,4 +104,17 @@ $breakpoints: (
 
 .container {
   @include container;
+}
+
+@mixin row {
+  position: relative;
+  margin-inline: -#{$gutter / 2};
+  @include device(small) {
+    margin-inline: 0;
+  }
+  @include clearfix;
+}
+
+.row {
+  @include row;
 }

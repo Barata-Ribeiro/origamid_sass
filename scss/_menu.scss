@@ -1,0 +1,54 @@
+@use 'grid' as *;
+@use 'variaveis-e-mixins' as *;
+
+.menu {
+  margin-block: 120px;
+  @include device(small) {
+    margin-block: 60px;
+  }
+}
+
+.menu-item {
+  &:first-child {
+    margin-block-end: 60px;
+  }
+
+  h2 {
+    @include tipo-2(24);
+    margin-bottom: 1em;
+  }
+
+  li {
+    @include tipo-1(18);
+    line-height: em(35, 18);
+    span {
+      $total-width: 70px;
+      $margin-right: 10px;
+      font-family: $fonte-2;
+      color: $bege-escuro;
+      display: inline-block;
+      width: $total-width;
+      text-align: right;
+      margin-right: $margin-right;
+      margin-left: -#{calc($total-width + $margin-right)};
+      @include device(small) {
+        margin-left: 0;
+        width: auto;
+      }
+    }
+  }
+  img {
+    border-radius: 50%;
+    border: 10px solid $bege-medio;
+    position: absolute;
+    right: 0;
+    margin-top: 30px;
+    @include device(large) {
+      right: 120px;
+    }
+    @include device(small) {
+      margin-top: 0;
+      height: 120px;
+    }
+  }
+}

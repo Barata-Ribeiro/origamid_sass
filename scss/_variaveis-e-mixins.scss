@@ -2,7 +2,7 @@
 $bege-claro: #edece4;
 $bege-medio: #cbc8b9;
 $bege-escuro: #988c77;
-$verde: #988c77;
+$verde: #1ab912;
 $cinza: #2a2426;
 
 // Fontes
@@ -10,7 +10,7 @@ $fonte-1: 'PT Mono', monospace;
 $fonte-2: 'Aref Ruqaa', serif;
 
 @function em($pixel, $ctx: 16) {
-  @return $pixel / $ctx + 0em;
+  @return calc($pixel / $ctx) + 0em;
 }
 
 @mixin tipo-1($size) {

@@ -1,0 +1,71 @@
+@use 'grid' as *;
+@use 'variaveis-e-mixins' as *;
+
+.contato {
+  margin-block: 120px;
+  @include device(small) {
+    margin-block: 60px;
+  }
+
+  form {
+    label {
+      @include tipo-1(18);
+      display: block;
+    }
+    input[type='text'],
+    input[type='email'],
+    textarea {
+      @include tipo-1(18);
+      color: $cinza;
+      width: 100%;
+      padding: 0 5px;
+      min-height: 40px;
+      border: 2px solid $bege-escuro;
+      margin-bottom: 1em;
+      resize: vertical;
+      &:hover,
+      &:focus {
+        border-color: $bege-medio;
+      }
+    }
+  }
+}
+
+input.button {
+  display: block;
+  @include tipo-1(18);
+  cursor: pointer;
+  color: $bege-escuro;
+  text-transform: uppercase;
+  text-align: center;
+  border: 2px solid $bege-escuro;
+  width: 200px;
+  padding: 2.5px 0;
+  @include box-shadow(5px 5px 0 -2px $bege-medio, 5px 5px 0 0 $bege-escuro);
+  transition: 0.3s;
+  &:hover {
+    @include box-shadow(3px 3px 0 -2px $bege-medio, 3px 3px 0 0 $bege-escuro);
+  }
+}
+
+.contato-info {
+  width: max-content;
+  color: $bege-escuro;
+  margin-top: 2em;
+  margin-bottom: 3em;
+  @include device(large) {
+    float: right;
+    text-align: right;
+    margin-top: -3em;
+  }
+}
+
+.contato-mapa {
+  display: block;
+  @include box-shadow(0 0 0 10px $bege-medio);
+  clear: both;
+  img {
+    width: 100%;
+    object-fit: cover;
+  }
+}
